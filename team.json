@@ -1,0 +1,11 @@
+{
+  "team_number": "T0005",
+  "group_lead": { "name": "Arpit Rajput", "enrollment_no": "2501010084", "github": "just-arpit" },
+  "members": [
+    { "name": "Ansh Sharma", "enrollment_no": "2501010578", "github": "anshxs" },
+    { "name": "Mayank Chauhan", "enrollment_no": "2501010271", "github": "0pMayank" },
+    { "name": "Swaraj Agarwal", "enrollment_no": "2501010468", "github": "Swaraj808-dev" }
+  ],
+  "postgres_version": "",
+  "laptop_used_for_benchmarks": ""
+}

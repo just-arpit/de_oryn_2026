@@ -22,12 +22,12 @@
 
 | Role | Name | Enrollment No. | GitHub Username |
 |------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Group Lead | Arpit Rajput | 2501010084| just-arpit |
+| Member 2 | Ansh Sharma | 2501010578 | anshxs |
+| Member 3 | Mayank Chauhan | 2501010271 | 0pMayank |
+| Member 4 | Swaraj Agarwal | 2501010468 | Swaraj808-dev |
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+**Team No.:** T0005 · **Section:** D · **Repository URL:** [https://github.com/just-arpit/de_oryn_2026](https://github.com/just-arpit/de_oryn_2026)
 
 ---
 
