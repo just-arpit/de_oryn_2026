@@ -6,6 +6,6 @@
     { "name": "Mayank Chauhan", "enrollment_no": "2501010271", "github": "0pMayank" },
     { "name": "Swaraj Agarwal", "enrollment_no": "2501010468", "github": "Swaraj808-dev" }
   ],
-  "postgres_version": "",
-  "laptop_used_for_benchmarks": ""
+  "postgres_version": "18.6",
+  "laptop_used_for_benchmarks": "Macbook Pro M4"
 }
