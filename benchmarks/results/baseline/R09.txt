@@ -1,63 +1,63 @@
 === R09 run 1 ===
-Sort  (cost=4817.78..4817.79 rows=1 width=28) (actual time=2.464..2.464 rows=15.00 loops=1)
+Sort  (cost=4817.79..4817.79 rows=1 width=28) (actual time=2.677..2.677 rows=15.00 loops=1)
   Sort Key: f.created_at DESC
   Sort Method: quicksort  Memory: 25kB
-  Buffers: shared hit=814
-  ->  Nested Loop  (cost=0.71..4817.77 rows=1 width=28) (actual time=0.275..2.453 rows=15.00 loops=1)
-        Buffers: shared hit=811
-        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.271..2.404 rows=15.00 loops=1)
+  Buffers: shared hit=844
+  ->  Nested Loop  (cost=0.71..4817.78 rows=1 width=28) (actual time=0.299..2.666 rows=15.00 loops=1)
+        Buffers: shared hit=841
+        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.294..2.606 rows=15.00 loops=1)
               Index Cond: (followee_id = 338)
               Filter: ((status)::text = 'PENDING'::text)
               Rows Removed by Filter: 40
               Index Searches: 1
-              Buffers: shared hit=766
-        ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=15)
+              Buffers: shared hit=796
+        ->  Index Scan using users_pkey on users u  (cost=0.29..8.31 rows=1 width=20) (actual time=0.004..0.004 rows=1.00 loops=15)
               Index Cond: (user_id = f.follower_id)
               Index Searches: 15
               Buffers: shared hit=45
 Planning:
-  Buffers: shared hit=266
-Planning Time: 0.357 ms
-Execution Time: 2.484 ms
+  Buffers: shared hit=269
+Planning Time: 0.375 ms
+Execution Time: 2.697 ms
 === R09 run 2 ===
-Sort  (cost=4817.78..4817.79 rows=1 width=28) (actual time=2.223..2.224 rows=15.00 loops=1)
+Sort  (cost=4817.79..4817.79 rows=1 width=28) (actual time=2.456..2.456 rows=15.00 loops=1)
   Sort Key: f.created_at DESC
   Sort Method: quicksort  Memory: 25kB
   Buffers: shared hit=814
-  ->  Nested Loop  (cost=0.71..4817.77 rows=1 width=28) (actual time=0.256..2.214 rows=15.00 loops=1)
+  ->  Nested Loop  (cost=0.71..4817.78 rows=1 width=28) (actual time=0.293..2.446 rows=15.00 loops=1)
         Buffers: shared hit=811
-        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.251..2.172 rows=15.00 loops=1)
+        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.287..2.395 rows=15.00 loops=1)
               Index Cond: (followee_id = 338)
               Filter: ((status)::text = 'PENDING'::text)
               Rows Removed by Filter: 40
               Index Searches: 1
               Buffers: shared hit=766
-        ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=15)
+        ->  Index Scan using users_pkey on users u  (cost=0.29..8.31 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=15)
               Index Cond: (user_id = f.follower_id)
               Index Searches: 15
               Buffers: shared hit=45
 Planning:
-  Buffers: shared hit=266
-Planning Time: 0.318 ms
-Execution Time: 2.241 ms
+  Buffers: shared hit=269
+Planning Time: 0.387 ms
+Execution Time: 2.476 ms
 === R09 run 3 ===
-Sort  (cost=4817.78..4817.79 rows=1 width=28) (actual time=2.206..2.206 rows=15.00 loops=1)
+Sort  (cost=4817.79..4817.79 rows=1 width=28) (actual time=2.394..2.395 rows=15.00 loops=1)
   Sort Key: f.created_at DESC
   Sort Method: quicksort  Memory: 25kB
   Buffers: shared hit=814
-  ->  Nested Loop  (cost=0.71..4817.77 rows=1 width=28) (actual time=0.249..2.198 rows=15.00 loops=1)
+  ->  Nested Loop  (cost=0.71..4817.78 rows=1 width=28) (actual time=0.268..2.385 rows=15.00 loops=1)
         Buffers: shared hit=811
-        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.246..2.156 rows=15.00 loops=1)
+        ->  Index Scan using follows_pkey on follows f  (cost=0.42..4809.47 rows=1 width=12) (actual time=0.264..2.339 rows=15.00 loops=1)
               Index Cond: (followee_id = 338)
               Filter: ((status)::text = 'PENDING'::text)
               Rows Removed by Filter: 40
               Index Searches: 1
               Buffers: shared hit=766
-        ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=15)
+        ->  Index Scan using users_pkey on users u  (cost=0.29..8.31 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=15)
               Index Cond: (user_id = f.follower_id)
               Index Searches: 15
               Buffers: shared hit=45
 Planning:
-  Buffers: shared hit=266
-Planning Time: 0.336 ms
-Execution Time: 2.224 ms
+  Buffers: shared hit=269
+Planning Time: 0.430 ms
+Execution Time: 2.416 ms

@@ -1,33 +1,33 @@
 === W03 run 1 ===
-Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.084..0.084 rows=0.00 loops=1)
-  Buffers: shared hit=30
-  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.010..0.010 rows=1.00 loops=1)
+Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.073..0.073 rows=0.00 loops=1)
+  Buffers: shared hit=29
+  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.012..0.012 rows=1.00 loops=1)
         Index Cond: (post_id = 59689)
         Index Searches: 1
         Buffers: shared hit=3
 Planning:
   Buffers: shared hit=67
-Planning Time: 0.134 ms
-Execution Time: 0.135 ms
+Planning Time: 0.144 ms
+Execution Time: 0.311 ms
 === W03 run 2 ===
-Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.076..0.076 rows=0.00 loops=1)
+Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.077..0.077 rows=0.00 loops=1)
   Buffers: shared hit=29
-  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.021..0.021 rows=1.00 loops=1)
+  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.019..0.019 rows=1.00 loops=1)
         Index Cond: (post_id = 59689)
         Index Searches: 1
         Buffers: shared hit=3
 Planning:
   Buffers: shared hit=67
-Planning Time: 0.153 ms
-Execution Time: 0.124 ms
+Planning Time: 0.144 ms
+Execution Time: 0.123 ms
 === W03 run 3 ===
-Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.069..0.070 rows=0.00 loops=1)
+Update on posts  (cost=0.29..8.31 rows=0 width=0) (actual time=0.074..0.075 rows=0.00 loops=1)
   Buffers: shared hit=29
-  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.018..0.019 rows=1.00 loops=1)
+  ->  Index Scan using posts_pkey on posts  (cost=0.29..8.31 rows=1 width=10) (actual time=0.018..0.018 rows=1.00 loops=1)
         Index Cond: (post_id = 59689)
         Index Searches: 1
         Buffers: shared hit=3
 Planning:
   Buffers: shared hit=67
-Planning Time: 0.136 ms
-Execution Time: 0.119 ms
+Planning Time: 0.147 ms
+Execution Time: 0.122 ms

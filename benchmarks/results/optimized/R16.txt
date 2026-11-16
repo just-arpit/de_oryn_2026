@@ -1,0 +1,75 @@
+=== R16 run 1 ===
+Sort  (cost=157.64..157.81 rows=67 width=19) (actual time=0.333..0.335 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=57
+  ->  Index Scan using idx_posts_created_at on posts  (cost=0.29..155.61 rows=67 width=19) (actual time=0.013..0.316 rows=81.00 loops=1)
+        Index Cond: ((created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Filter: ((location_name)::text ~~* '%goa%'::text)
+        Rows Removed by Filter: 3215
+        Index Searches: 1
+        Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=178
+Planning Time: 0.723 ms
+Execution Time: 0.357 ms
+=== R16 run 2 ===
+Sort  (cost=157.64..157.81 rows=67 width=19) (actual time=0.312..0.313 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=57
+  ->  Index Scan using idx_posts_created_at on posts  (cost=0.29..155.61 rows=67 width=19) (actual time=0.009..0.299 rows=81.00 loops=1)
+        Index Cond: ((created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Filter: ((location_name)::text ~~* '%goa%'::text)
+        Rows Removed by Filter: 3215
+        Index Searches: 1
+        Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=178
+Planning Time: 0.677 ms
+Execution Time: 0.331 ms
+=== R16 run 3 ===
+Sort  (cost=157.64..157.81 rows=67 width=19) (actual time=0.327..0.328 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=57
+  ->  Index Scan using idx_posts_created_at on posts  (cost=0.29..155.61 rows=67 width=19) (actual time=0.009..0.313 rows=81.00 loops=1)
+        Index Cond: ((created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Filter: ((location_name)::text ~~* '%goa%'::text)
+        Rows Removed by Filter: 3215
+        Index Searches: 1
+        Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=178
+Planning Time: 0.669 ms
+Execution Time: 0.347 ms
+=== R16 run 4 ===
+Sort  (cost=157.64..157.81 rows=67 width=19) (actual time=0.309..0.311 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=57
+  ->  Index Scan using idx_posts_created_at on posts  (cost=0.29..155.61 rows=67 width=19) (actual time=0.009..0.296 rows=81.00 loops=1)
+        Index Cond: ((created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Filter: ((location_name)::text ~~* '%goa%'::text)
+        Rows Removed by Filter: 3215
+        Index Searches: 1
+        Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=178
+Planning Time: 0.635 ms
+Execution Time: 0.328 ms
+=== R16 run 5 ===
+Sort  (cost=157.64..157.81 rows=67 width=19) (actual time=0.309..0.311 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=57
+  ->  Index Scan using idx_posts_created_at on posts  (cost=0.29..155.61 rows=67 width=19) (actual time=0.009..0.297 rows=81.00 loops=1)
+        Index Cond: ((created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Filter: ((location_name)::text ~~* '%goa%'::text)
+        Rows Removed by Filter: 3215
+        Index Searches: 1
+        Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=178
+Planning Time: 0.636 ms
+Execution Time: 0.329 ms

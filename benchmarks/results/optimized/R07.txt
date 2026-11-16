@@ -1,0 +1,160 @@
+=== R07 run 1 ===
+Sort  (cost=98.83..98.85 rows=8 width=29) (actual time=0.069..0.069 rows=9.00 loops=1)
+  Sort Key: ((f.follower_id IS NOT NULL)) DESC, l.created_at DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=45
+  ->  Nested Loop Left Join  (cost=1.13..98.71 rows=8 width=29) (actual time=0.026..0.059 rows=9.00 loops=1)
+        Join Filter: (f.followee_id = l.user_id)
+        Rows Removed by Join Filter: 126
+        Buffers: shared hit=37
+        ->  Nested Loop  (cost=0.71..75.00 rows=8 width=28) (actual time=0.014..0.041 rows=9.00 loops=1)
+              Buffers: shared hit=33
+              ->  Index Only Scan using idx_likes_post_created_user on likes l  (cost=0.42..8.56 rows=8 width=12) (actual time=0.007..0.008 rows=9.00 loops=1)
+                    Index Cond: (post_id = 59689)
+                    Heap Fetches: 5
+                    Index Searches: 1
+                    Buffers: shared hit=6
+              ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=9)
+                    Index Cond: (user_id = l.user_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+        ->  Materialize  (cost=0.42..22.65 rows=9 width=8) (actual time=0.001..0.002 rows=14.00 loops=9)
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Index Scan using follows_pkey on follows f  (cost=0.42..22.60 rows=9 width=8) (actual time=0.009..0.009 rows=14.00 loops=1)
+                    Index Cond: (follower_id = 1042)
+                    Filter: ((status)::text = 'ACCEPTED'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 0.676 ms
+Execution Time: 0.091 ms
+=== R07 run 2 ===
+Sort  (cost=98.83..98.85 rows=8 width=29) (actual time=0.070..0.071 rows=9.00 loops=1)
+  Sort Key: ((f.follower_id IS NOT NULL)) DESC, l.created_at DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=43
+  ->  Nested Loop Left Join  (cost=1.13..98.71 rows=8 width=29) (actual time=0.025..0.060 rows=9.00 loops=1)
+        Join Filter: (f.followee_id = l.user_id)
+        Rows Removed by Join Filter: 126
+        Buffers: shared hit=35
+        ->  Nested Loop  (cost=0.71..75.00 rows=8 width=28) (actual time=0.011..0.040 rows=9.00 loops=1)
+              Buffers: shared hit=31
+              ->  Index Only Scan using idx_likes_post_created_user on likes l  (cost=0.42..8.56 rows=8 width=12) (actual time=0.004..0.005 rows=9.00 loops=1)
+                    Index Cond: (post_id = 59689)
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.004..0.004 rows=1.00 loops=9)
+                    Index Cond: (user_id = l.user_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+        ->  Materialize  (cost=0.42..22.65 rows=9 width=8) (actual time=0.001..0.002 rows=14.00 loops=9)
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Index Scan using follows_pkey on follows f  (cost=0.42..22.60 rows=9 width=8) (actual time=0.009..0.010 rows=14.00 loops=1)
+                    Index Cond: (follower_id = 1042)
+                    Filter: ((status)::text = 'ACCEPTED'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 0.662 ms
+Execution Time: 0.095 ms
+=== R07 run 3 ===
+Sort  (cost=98.83..98.85 rows=8 width=29) (actual time=0.065..0.066 rows=9.00 loops=1)
+  Sort Key: ((f.follower_id IS NOT NULL)) DESC, l.created_at DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=43
+  ->  Nested Loop Left Join  (cost=1.13..98.71 rows=8 width=29) (actual time=0.023..0.055 rows=9.00 loops=1)
+        Join Filter: (f.followee_id = l.user_id)
+        Rows Removed by Join Filter: 126
+        Buffers: shared hit=35
+        ->  Nested Loop  (cost=0.71..75.00 rows=8 width=28) (actual time=0.010..0.036 rows=9.00 loops=1)
+              Buffers: shared hit=31
+              ->  Index Only Scan using idx_likes_post_created_user on likes l  (cost=0.42..8.56 rows=8 width=12) (actual time=0.003..0.004 rows=9.00 loops=1)
+                    Index Cond: (post_id = 59689)
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=9)
+                    Index Cond: (user_id = l.user_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+        ->  Materialize  (cost=0.42..22.65 rows=9 width=8) (actual time=0.001..0.002 rows=14.00 loops=9)
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Index Scan using follows_pkey on follows f  (cost=0.42..22.60 rows=9 width=8) (actual time=0.009..0.010 rows=14.00 loops=1)
+                    Index Cond: (follower_id = 1042)
+                    Filter: ((status)::text = 'ACCEPTED'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 0.645 ms
+Execution Time: 0.088 ms
+=== R07 run 4 ===
+Sort  (cost=98.83..98.85 rows=8 width=29) (actual time=0.067..0.067 rows=9.00 loops=1)
+  Sort Key: ((f.follower_id IS NOT NULL)) DESC, l.created_at DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=43
+  ->  Nested Loop Left Join  (cost=1.13..98.71 rows=8 width=29) (actual time=0.024..0.056 rows=9.00 loops=1)
+        Join Filter: (f.followee_id = l.user_id)
+        Rows Removed by Join Filter: 126
+        Buffers: shared hit=35
+        ->  Nested Loop  (cost=0.71..75.00 rows=8 width=28) (actual time=0.010..0.038 rows=9.00 loops=1)
+              Buffers: shared hit=31
+              ->  Index Only Scan using idx_likes_post_created_user on likes l  (cost=0.42..8.56 rows=8 width=12) (actual time=0.003..0.004 rows=9.00 loops=1)
+                    Index Cond: (post_id = 59689)
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.004..0.004 rows=1.00 loops=9)
+                    Index Cond: (user_id = l.user_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+        ->  Materialize  (cost=0.42..22.65 rows=9 width=8) (actual time=0.001..0.002 rows=14.00 loops=9)
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Index Scan using follows_pkey on follows f  (cost=0.42..22.60 rows=9 width=8) (actual time=0.009..0.010 rows=14.00 loops=1)
+                    Index Cond: (follower_id = 1042)
+                    Filter: ((status)::text = 'ACCEPTED'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 0.643 ms
+Execution Time: 0.090 ms
+=== R07 run 5 ===
+Sort  (cost=98.83..98.85 rows=8 width=29) (actual time=0.064..0.064 rows=9.00 loops=1)
+  Sort Key: ((f.follower_id IS NOT NULL)) DESC, l.created_at DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=43
+  ->  Nested Loop Left Join  (cost=1.13..98.71 rows=8 width=29) (actual time=0.024..0.054 rows=9.00 loops=1)
+        Join Filter: (f.followee_id = l.user_id)
+        Rows Removed by Join Filter: 126
+        Buffers: shared hit=35
+        ->  Nested Loop  (cost=0.71..75.00 rows=8 width=28) (actual time=0.010..0.036 rows=9.00 loops=1)
+              Buffers: shared hit=31
+              ->  Index Only Scan using idx_likes_post_created_user on likes l  (cost=0.42..8.56 rows=8 width=12) (actual time=0.003..0.004 rows=9.00 loops=1)
+                    Index Cond: (post_id = 59689)
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using users_pkey on users u  (cost=0.29..8.30 rows=1 width=20) (actual time=0.003..0.003 rows=1.00 loops=9)
+                    Index Cond: (user_id = l.user_id)
+                    Index Searches: 9
+                    Buffers: shared hit=27
+        ->  Materialize  (cost=0.42..22.65 rows=9 width=8) (actual time=0.001..0.002 rows=14.00 loops=9)
+              Storage: Memory  Maximum Storage: 17kB
+              Buffers: shared hit=4
+              ->  Index Scan using follows_pkey on follows f  (cost=0.42..22.60 rows=9 width=8) (actual time=0.009..0.010 rows=14.00 loops=1)
+                    Index Cond: (follower_id = 1042)
+                    Filter: ((status)::text = 'ACCEPTED'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=425
+Planning Time: 0.617 ms
+Execution Time: 0.085 ms

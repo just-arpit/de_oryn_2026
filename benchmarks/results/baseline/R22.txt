@@ -1,45 +1,45 @@
 === R22 run 1 ===
-Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.650..4.651 rows=25.00 loops=1)
+Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.619..4.620 rows=25.00 loops=1)
   Buffers: shared hit=1291
-  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.589..4.626 rows=1525.00 loops=1)
+  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.561..4.595 rows=1525.00 loops=1)
         Sort Key: created_at DESC
         Sort Method: quicksort  Memory: 311kB
         Buffers: shared hit=1291
-        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.265 rows=3046.00 loops=1)
+        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.240 rows=3046.00 loops=1)
               Filter: is_hidden
               Rows Removed by Filter: 146954
               Buffers: shared hit=1288
 Planning:
-  Buffers: shared hit=108
-Planning Time: 0.159 ms
-Execution Time: 4.661 ms
+  Buffers: shared hit=98
+Planning Time: 0.164 ms
+Execution Time: 4.630 ms
 === R22 run 2 ===
-Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.725..4.726 rows=25.00 loops=1)
+Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.713..4.715 rows=25.00 loops=1)
   Buffers: shared hit=1291
-  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.662..4.700 rows=1525.00 loops=1)
+  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.652..4.690 rows=1525.00 loops=1)
         Sort Key: created_at DESC
         Sort Method: quicksort  Memory: 311kB
         Buffers: shared hit=1291
-        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.355 rows=3046.00 loops=1)
+        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.328 rows=3046.00 loops=1)
               Filter: is_hidden
               Rows Removed by Filter: 146954
               Buffers: shared hit=1288
 Planning:
   Buffers: shared hit=98
-Planning Time: 0.147 ms
-Execution Time: 4.736 ms
+Planning Time: 0.155 ms
+Execution Time: 4.724 ms
 === R22 run 3 ===
-Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.724..4.726 rows=25.00 loops=1)
+Limit  (cost=2972.60..2972.67 rows=25 width=36) (actual time=4.707..4.708 rows=25.00 loops=1)
   Buffers: shared hit=1291
-  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.668..4.702 rows=1525.00 loops=1)
+  ->  Sort  (cost=2968.85..2976.67 rows=3125 width=36) (actual time=4.648..4.685 rows=1525.00 loops=1)
         Sort Key: created_at DESC
         Sort Method: quicksort  Memory: 311kB
         Buffers: shared hit=1291
-        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.343 rows=3046.00 loops=1)
+        ->  Seq Scan on comments  (cost=0.00..2788.00 rows=3125 width=36) (actual time=0.004..4.333 rows=3046.00 loops=1)
               Filter: is_hidden
               Rows Removed by Filter: 146954
               Buffers: shared hit=1288
 Planning:
   Buffers: shared hit=98
-Planning Time: 0.160 ms
-Execution Time: 4.735 ms
+Planning Time: 0.161 ms
+Execution Time: 4.718 ms

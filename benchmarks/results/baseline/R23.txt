@@ -1,21 +1,21 @@
 === R23 run 1 ===
-Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.008..0.008 rows=1.00 loops=1)
-  Buffers: shared hit=3
+Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.034..0.035 rows=1.00 loops=1)
+  Buffers: shared hit=5
   InitPlan 1
-    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.007..0.007 rows=0.00 loops=1)
+    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.034..0.034 rows=0.00 loops=1)
           Index Cond: ((user_id = 1042) AND (post_id = 59689))
-          Heap Fetches: 0
+          Heap Fetches: 1
           Index Searches: 1
-          Buffers: shared hit=3
+          Buffers: shared hit=5
 Planning:
   Buffers: shared hit=70
-Planning Time: 0.157 ms
-Execution Time: 0.024 ms
+Planning Time: 0.164 ms
+Execution Time: 0.052 ms
 === R23 run 2 ===
-Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.007..0.008 rows=1.00 loops=1)
+Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.008..0.009 rows=1.00 loops=1)
   Buffers: shared hit=3
   InitPlan 1
-    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.007..0.007 rows=0.00 loops=1)
+    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.008..0.008 rows=0.00 loops=1)
           Index Cond: ((user_id = 1042) AND (post_id = 59689))
           Heap Fetches: 0
           Index Searches: 1
@@ -23,17 +23,17 @@ Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.007..0.008 rows=1.00 loo
 Planning:
   Buffers: shared hit=70
 Planning Time: 0.147 ms
-Execution Time: 0.024 ms
+Execution Time: 0.025 ms
 === R23 run 3 ===
-Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.007..0.008 rows=1.00 loops=1)
+Result  (cost=8.44..8.45 rows=1 width=1) (actual time=0.011..0.011 rows=1.00 loops=1)
   Buffers: shared hit=3
   InitPlan 1
-    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.007..0.007 rows=0.00 loops=1)
+    ->  Index Only Scan using likes_pkey on likes  (cost=0.42..8.44 rows=1 width=0) (actual time=0.010..0.010 rows=0.00 loops=1)
           Index Cond: ((user_id = 1042) AND (post_id = 59689))
           Heap Fetches: 0
           Index Searches: 1
           Buffers: shared hit=3
 Planning:
   Buffers: shared hit=70
-Planning Time: 0.153 ms
-Execution Time: 0.024 ms
+Planning Time: 0.158 ms
+Execution Time: 0.030 ms

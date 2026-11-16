@@ -1,0 +1,90 @@
+=== R14 run 1 ===
+Merge Anti Join  (cost=0.84..17.28 rows=11 width=4) (actual time=0.013..0.020 rows=81.00 loops=1)
+  Merge Cond: (f.follower_id = b.followee_id)
+  Buffers: shared hit=9
+  ->  Index Only Scan using idx_follows_followee_status_follower on follows f  (cost=0.42..8.64 rows=11 width=4) (actual time=0.007..0.011 rows=81.00 loops=1)
+        Index Cond: ((followee_id = 217) AND (status = 'ACCEPTED'::text))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+  ->  Index Only Scan using follows_pkey on follows b  (cost=0.42..8.58 rows=9 width=4) (actual time=0.003..0.004 rows=5.00 loops=1)
+        Index Cond: (follower_id = 217)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.319 ms
+Execution Time: 0.045 ms
+=== R14 run 2 ===
+Merge Anti Join  (cost=0.84..17.28 rows=11 width=4) (actual time=0.013..0.020 rows=81.00 loops=1)
+  Merge Cond: (f.follower_id = b.followee_id)
+  Buffers: shared hit=9
+  ->  Index Only Scan using idx_follows_followee_status_follower on follows f  (cost=0.42..8.64 rows=11 width=4) (actual time=0.007..0.011 rows=81.00 loops=1)
+        Index Cond: ((followee_id = 217) AND (status = 'ACCEPTED'::text))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+  ->  Index Only Scan using follows_pkey on follows b  (cost=0.42..8.58 rows=9 width=4) (actual time=0.003..0.004 rows=5.00 loops=1)
+        Index Cond: (follower_id = 217)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.331 ms
+Execution Time: 0.046 ms
+=== R14 run 3 ===
+Merge Anti Join  (cost=0.84..17.28 rows=11 width=4) (actual time=0.014..0.021 rows=81.00 loops=1)
+  Merge Cond: (f.follower_id = b.followee_id)
+  Buffers: shared hit=9
+  ->  Index Only Scan using idx_follows_followee_status_follower on follows f  (cost=0.42..8.64 rows=11 width=4) (actual time=0.008..0.011 rows=81.00 loops=1)
+        Index Cond: ((followee_id = 217) AND (status = 'ACCEPTED'::text))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+  ->  Index Only Scan using follows_pkey on follows b  (cost=0.42..8.58 rows=9 width=4) (actual time=0.003..0.003 rows=5.00 loops=1)
+        Index Cond: (follower_id = 217)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.321 ms
+Execution Time: 0.044 ms
+=== R14 run 4 ===
+Merge Anti Join  (cost=0.84..17.28 rows=11 width=4) (actual time=0.015..0.022 rows=81.00 loops=1)
+  Merge Cond: (f.follower_id = b.followee_id)
+  Buffers: shared hit=9
+  ->  Index Only Scan using idx_follows_followee_status_follower on follows f  (cost=0.42..8.64 rows=11 width=4) (actual time=0.008..0.012 rows=81.00 loops=1)
+        Index Cond: ((followee_id = 217) AND (status = 'ACCEPTED'::text))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+  ->  Index Only Scan using follows_pkey on follows b  (cost=0.42..8.58 rows=9 width=4) (actual time=0.004..0.004 rows=5.00 loops=1)
+        Index Cond: (follower_id = 217)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.339 ms
+Execution Time: 0.047 ms
+=== R14 run 5 ===
+Merge Anti Join  (cost=0.84..17.28 rows=11 width=4) (actual time=0.013..0.020 rows=81.00 loops=1)
+  Merge Cond: (f.follower_id = b.followee_id)
+  Buffers: shared hit=9
+  ->  Index Only Scan using idx_follows_followee_status_follower on follows f  (cost=0.42..8.64 rows=11 width=4) (actual time=0.007..0.011 rows=81.00 loops=1)
+        Index Cond: ((followee_id = 217) AND (status = 'ACCEPTED'::text))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+  ->  Index Only Scan using follows_pkey on follows b  (cost=0.42..8.58 rows=9 width=4) (actual time=0.004..0.004 rows=5.00 loops=1)
+        Index Cond: (follower_id = 217)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=177
+Planning Time: 0.339 ms
+Execution Time: 0.051 ms
