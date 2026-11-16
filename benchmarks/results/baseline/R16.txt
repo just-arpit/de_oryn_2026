@@ -1,0 +1,39 @@
+=== R16 run 1 ===
+Sort  (cost=1844.15..1844.32 rows=70 width=19) (actual time=4.706..4.707 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=795
+  ->  Seq Scan on posts  (cost=0.00..1842.00 rows=70 width=19) (actual time=4.423..4.693 rows=81.00 loops=1)
+        Filter: (((location_name)::text ~~* '%goa%'::text) AND (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 59919
+        Buffers: shared hit=792
+Planning:
+  Buffers: shared hit=84
+Planning Time: 0.159 ms
+Execution Time: 4.723 ms
+=== R16 run 2 ===
+Sort  (cost=1844.15..1844.32 rows=70 width=19) (actual time=4.339..4.341 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=795
+  ->  Seq Scan on posts  (cost=0.00..1842.00 rows=70 width=19) (actual time=4.060..4.327 rows=81.00 loops=1)
+        Filter: (((location_name)::text ~~* '%goa%'::text) AND (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 59919
+        Buffers: shared hit=792
+Planning:
+  Buffers: shared hit=84
+Planning Time: 0.155 ms
+Execution Time: 4.357 ms
+=== R16 run 3 ===
+Sort  (cost=1844.15..1844.32 rows=70 width=19) (actual time=4.299..4.300 rows=81.00 loops=1)
+  Sort Key: like_count DESC
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=795
+  ->  Seq Scan on posts  (cost=0.00..1842.00 rows=70 width=19) (actual time=4.045..4.286 rows=81.00 loops=1)
+        Filter: (((location_name)::text ~~* '%goa%'::text) AND (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (created_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+        Rows Removed by Filter: 59919
+        Buffers: shared hit=792
+Planning:
+  Buffers: shared hit=84
+Planning Time: 0.150 ms
+Execution Time: 4.316 ms

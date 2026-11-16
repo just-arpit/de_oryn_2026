@@ -1,1 +1,31 @@
 query_id,type,avg_ms,median_ms,min_ms,max_ms,scan_nodes
+R01,READ,6.581,6.758,6.091,6.893,Seq Scan on posts | Index Scan using follows_pkey on follows
+R02,READ,3.448,3.496,3.281,3.568,Seq Scan on posts
+R03,READ,0.029,0.028,0.026,0.032,Index Scan using users_username_key on users
+R04,READ,8.743,8.491,8.167,9.570,Seq Scan on comments
+R05,READ,9.823,9.801,9.711,9.958,Seq Scan on post_hashtags | Seq Scan on hashtags | Index Scan using posts_pkey on posts
+R06,READ,8.626,8.647,8.518,8.713,Seq Scan on users
+R07,READ,6.561,6.500,6.431,6.752,Seq Scan on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows
+R08,READ,0.129,0.129,0.126,0.133,Index Scan using follows_pkey on follows | Index Only Scan using follows_pkey on follows
+R09,READ,2.316,2.241,2.224,2.484,Index Scan using follows_pkey on follows | Index Scan using users_pkey on users
+R10,READ,2.223,2.208,2.192,2.270,Seq Scan on stories | Index Scan using follows_pkey on follows
+R11,READ,6.951,6.979,6.872,7.003,Seq Scan on posts | Seq Scan on users
+R12,READ,10.058,10.064,9.918,10.192,Seq Scan on post_hashtags | Seq Scan on posts | Seq Scan on hashtags
+R13,READ,21.234,21.166,20.915,21.622,Seq Scan on comments
+R14,READ,2.442,2.407,2.374,2.546,Index Scan using follows_pkey on follows | Index Only Scan using follows_pkey on follows
+R15,READ,29.757,29.770,29.560,29.941,Seq Scan on follows | Seq Scan on users
+R16,READ,4.465,4.357,4.316,4.723,Seq Scan on posts
+R17,READ,8.573,8.566,8.561,8.593,Seq Scan on posts | Index Scan using users_pkey on users | Index Scan using post_media_pkey on post_media
+R18,READ,4.523,4.456,4.401,4.712,Seq Scan on posts
+R19,READ,5478.076,5377.301,5367.746,5689.180,Seq Scan on users | Seq Scan on posts | Seq Scan on likes
+R20,READ,12.430,12.275,12.217,12.797,Seq Scan on comments | Seq Scan on posts
+R21,READ,3.799,3.647,3.606,4.145,Index Scan using follows_pkey on follows | Index Only Scan using likes_pkey on likes | Index Scan using posts_pkey on posts
+R22,READ,4.711,4.735,4.661,4.736,Seq Scan on comments
+R23,READ,0.024,0.024,0.024,0.024,Index Only Scan using likes_pkey on likes
+R24,READ,1.452,1.464,1.417,1.474,Seq Scan on stories
+W01,WRITE,0.431,0.399,0.386,0.508,(no scan)
+W02,WRITE,0.487,0.489,0.480,0.491,(no scan)
+W03,WRITE,0.126,0.124,0.119,0.135,Index Scan using posts_pkey on posts
+W04,WRITE,68.314,68.890,67.152,68.900,Seq Scan on users | Seq Scan on follows
+W05,WRITE,6.552,6.539,6.464,6.654,Seq Scan on stories
+W06,WRITE,2.490,2.505,2.430,2.535,Index Scan using follows_pkey on follows
