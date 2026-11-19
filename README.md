@@ -5,6 +5,7 @@
 **Topics used:** Data types & constraints · Keys & relationships · Normalization · Query execution plans · Indexing · Query optimization · VACUUM/ANALYZE · Partitioning & sharding
 
 ## Files in this folder
+
 | Path | What it is |
 |------|------------|
 | `README.md` | This project brief |
