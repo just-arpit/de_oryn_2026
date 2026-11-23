@@ -1,0 +1,165 @@
+=== R19 run 1 ===
+Sort  (cost=14118.26..14119.00 rows=294 width=36) (actual time=72.456..72.462 rows=294.00 loops=1)
+  Sort Key: (COALESCE((count(l.user_id)), '0'::bigint)) DESC
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=3553
+  ->  Hash Right Join  (cost=13655.33..14106.21 rows=294 width=36) (actual time=71.019..72.420 rows=294.00 loops=1)
+        Hash Cond: (p.user_id = u.user_id)
+        Buffers: shared hit=3550
+        ->  HashAggregate  (cost=12865.65..13064.93 rows=19928 width=20) (actual time=69.710..70.558 rows=23340.00 loops=1)
+              Group Key: p.user_id
+              Batches: 1  Memory Usage: 1817kB
+              Buffers: shared hit=3064
+              ->  Hash Right Join  (cost=2142.00..9716.00 rows=419954 width=16) (actual time=5.391..43.597 rows=420116.00 loops=1)
+                    Hash Cond: (l.post_id = p.post_id)
+                    Buffers: shared hit=3064
+                    ->  Seq Scan on likes l  (cost=0.00..6471.54 rows=419954 width=8) (actual time=0.007..8.838 rows=419954.00 loops=1)
+                          Buffers: shared hit=2272
+                    ->  Hash  (cost=1392.00..1392.00 rows=60000 width=16) (actual time=5.351..5.351 rows=60000.00 loops=1)
+                          Buckets: 65536  Batches: 1  Memory Usage: 3559kB
+                          Buffers: shared hit=792
+                          ->  Seq Scan on posts p  (cost=0.00..1392.00 rows=60000 width=16) (actual time=0.003..2.976 rows=60000.00 loops=1)
+                                Buffers: shared hit=792
+        ->  Hash  (cost=786.00..786.00 rows=294 width=20) (actual time=1.293..1.293 rows=294.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 23kB
+              Buffers: shared hit=486
+              ->  Seq Scan on users u  (cost=0.00..786.00 rows=294 width=20) (actual time=0.003..1.277 rows=294.00 loops=1)
+                    Filter: is_verified
+                    Rows Removed by Filter: 29706
+                    Buffers: shared hit=486
+Planning:
+  Buffers: shared hit=364
+Planning Time: 0.618 ms
+Execution Time: 72.534 ms
+=== R19 run 2 ===
+Sort  (cost=14118.26..14119.00 rows=294 width=36) (actual time=73.903..73.909 rows=294.00 loops=1)
+  Sort Key: (COALESCE((count(l.user_id)), '0'::bigint)) DESC
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=3553
+  ->  Hash Right Join  (cost=13655.33..14106.21 rows=294 width=36) (actual time=72.471..73.875 rows=294.00 loops=1)
+        Hash Cond: (p.user_id = u.user_id)
+        Buffers: shared hit=3550
+        ->  HashAggregate  (cost=12865.65..13064.93 rows=19928 width=20) (actual time=71.194..72.043 rows=23340.00 loops=1)
+              Group Key: p.user_id
+              Batches: 1  Memory Usage: 1817kB
+              Buffers: shared hit=3064
+              ->  Hash Right Join  (cost=2142.00..9716.00 rows=419954 width=16) (actual time=5.389..44.920 rows=420116.00 loops=1)
+                    Hash Cond: (l.post_id = p.post_id)
+                    Buffers: shared hit=3064
+                    ->  Seq Scan on likes l  (cost=0.00..6471.54 rows=419954 width=8) (actual time=0.006..8.864 rows=419954.00 loops=1)
+                          Buffers: shared hit=2272
+                    ->  Hash  (cost=1392.00..1392.00 rows=60000 width=16) (actual time=5.352..5.353 rows=60000.00 loops=1)
+                          Buckets: 65536  Batches: 1  Memory Usage: 3559kB
+                          Buffers: shared hit=792
+                          ->  Seq Scan on posts p  (cost=0.00..1392.00 rows=60000 width=16) (actual time=0.003..2.936 rows=60000.00 loops=1)
+                                Buffers: shared hit=792
+        ->  Hash  (cost=786.00..786.00 rows=294 width=20) (actual time=1.261..1.261 rows=294.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 23kB
+              Buffers: shared hit=486
+              ->  Seq Scan on users u  (cost=0.00..786.00 rows=294 width=20) (actual time=0.003..1.246 rows=294.00 loops=1)
+                    Filter: is_verified
+                    Rows Removed by Filter: 29706
+                    Buffers: shared hit=486
+Planning:
+  Buffers: shared hit=364
+Planning Time: 0.603 ms
+Execution Time: 73.978 ms
+=== R19 run 3 ===
+Sort  (cost=14118.26..14119.00 rows=294 width=36) (actual time=74.324..74.331 rows=294.00 loops=1)
+  Sort Key: (COALESCE((count(l.user_id)), '0'::bigint)) DESC
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=3553
+  ->  Hash Right Join  (cost=13655.33..14106.21 rows=294 width=36) (actual time=72.870..74.295 rows=294.00 loops=1)
+        Hash Cond: (p.user_id = u.user_id)
+        Buffers: shared hit=3550
+        ->  HashAggregate  (cost=12865.65..13064.93 rows=19928 width=20) (actual time=71.524..72.389 rows=23340.00 loops=1)
+              Group Key: p.user_id
+              Batches: 1  Memory Usage: 1817kB
+              Buffers: shared hit=3064
+              ->  Hash Right Join  (cost=2142.00..9716.00 rows=419954 width=16) (actual time=5.446..44.836 rows=420116.00 loops=1)
+                    Hash Cond: (l.post_id = p.post_id)
+                    Buffers: shared hit=3064
+                    ->  Seq Scan on likes l  (cost=0.00..6471.54 rows=419954 width=8) (actual time=0.008..8.959 rows=419954.00 loops=1)
+                          Buffers: shared hit=2272
+                    ->  Hash  (cost=1392.00..1392.00 rows=60000 width=16) (actual time=5.406..5.406 rows=60000.00 loops=1)
+                          Buckets: 65536  Batches: 1  Memory Usage: 3559kB
+                          Buffers: shared hit=792
+                          ->  Seq Scan on posts p  (cost=0.00..1392.00 rows=60000 width=16) (actual time=0.003..2.976 rows=60000.00 loops=1)
+                                Buffers: shared hit=792
+        ->  Hash  (cost=786.00..786.00 rows=294 width=20) (actual time=1.329..1.329 rows=294.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 23kB
+              Buffers: shared hit=486
+              ->  Seq Scan on users u  (cost=0.00..786.00 rows=294 width=20) (actual time=0.003..1.313 rows=294.00 loops=1)
+                    Filter: is_verified
+                    Rows Removed by Filter: 29706
+                    Buffers: shared hit=486
+Planning:
+  Buffers: shared hit=364
+Planning Time: 0.661 ms
+Execution Time: 74.407 ms
+=== R19 run 4 ===
+Sort  (cost=14118.26..14119.00 rows=294 width=36) (actual time=72.685..72.692 rows=294.00 loops=1)
+  Sort Key: (COALESCE((count(l.user_id)), '0'::bigint)) DESC
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=3553
+  ->  Hash Right Join  (cost=13655.33..14106.21 rows=294 width=36) (actual time=71.229..72.655 rows=294.00 loops=1)
+        Hash Cond: (p.user_id = u.user_id)
+        Buffers: shared hit=3550
+        ->  HashAggregate  (cost=12865.65..13064.93 rows=19928 width=20) (actual time=69.913..70.779 rows=23340.00 loops=1)
+              Group Key: p.user_id
+              Batches: 1  Memory Usage: 1817kB
+              Buffers: shared hit=3064
+              ->  Hash Right Join  (cost=2142.00..9716.00 rows=419954 width=16) (actual time=5.448..43.765 rows=420116.00 loops=1)
+                    Hash Cond: (l.post_id = p.post_id)
+                    Buffers: shared hit=3064
+                    ->  Seq Scan on likes l  (cost=0.00..6471.54 rows=419954 width=8) (actual time=0.009..8.880 rows=419954.00 loops=1)
+                          Buffers: shared hit=2272
+                    ->  Hash  (cost=1392.00..1392.00 rows=60000 width=16) (actual time=5.408..5.409 rows=60000.00 loops=1)
+                          Buckets: 65536  Batches: 1  Memory Usage: 3559kB
+                          Buffers: shared hit=792
+                          ->  Seq Scan on posts p  (cost=0.00..1392.00 rows=60000 width=16) (actual time=0.003..2.967 rows=60000.00 loops=1)
+                                Buffers: shared hit=792
+        ->  Hash  (cost=786.00..786.00 rows=294 width=20) (actual time=1.300..1.300 rows=294.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 23kB
+              Buffers: shared hit=486
+              ->  Seq Scan on users u  (cost=0.00..786.00 rows=294 width=20) (actual time=0.003..1.284 rows=294.00 loops=1)
+                    Filter: is_verified
+                    Rows Removed by Filter: 29706
+                    Buffers: shared hit=486
+Planning:
+  Buffers: shared hit=364
+Planning Time: 0.616 ms
+Execution Time: 72.765 ms
+=== R19 run 5 ===
+Sort  (cost=14118.26..14119.00 rows=294 width=36) (actual time=73.188..73.196 rows=294.00 loops=1)
+  Sort Key: (COALESCE((count(l.user_id)), '0'::bigint)) DESC
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=3553
+  ->  Hash Right Join  (cost=13655.33..14106.21 rows=294 width=36) (actual time=71.704..73.161 rows=294.00 loops=1)
+        Hash Cond: (p.user_id = u.user_id)
+        Buffers: shared hit=3550
+        ->  HashAggregate  (cost=12865.65..13064.93 rows=19928 width=20) (actual time=70.263..71.151 rows=23340.00 loops=1)
+              Group Key: p.user_id
+              Batches: 1  Memory Usage: 1817kB
+              Buffers: shared hit=3064
+              ->  Hash Right Join  (cost=2142.00..9716.00 rows=419954 width=16) (actual time=5.709..43.965 rows=420116.00 loops=1)
+                    Hash Cond: (l.post_id = p.post_id)
+                    Buffers: shared hit=3064
+                    ->  Seq Scan on likes l  (cost=0.00..6471.54 rows=419954 width=8) (actual time=0.007..8.837 rows=419954.00 loops=1)
+                          Buffers: shared hit=2272
+                    ->  Hash  (cost=1392.00..1392.00 rows=60000 width=16) (actual time=5.663..5.663 rows=60000.00 loops=1)
+                          Buckets: 65536  Batches: 1  Memory Usage: 3559kB
+                          Buffers: shared hit=792
+                          ->  Seq Scan on posts p  (cost=0.00..1392.00 rows=60000 width=16) (actual time=0.003..3.116 rows=60000.00 loops=1)
+                                Buffers: shared hit=792
+        ->  Hash  (cost=786.00..786.00 rows=294 width=20) (actual time=1.423..1.423 rows=294.00 loops=1)
+              Buckets: 1024  Batches: 1  Memory Usage: 23kB
+              Buffers: shared hit=486
+              ->  Seq Scan on users u  (cost=0.00..786.00 rows=294 width=20) (actual time=0.003..1.406 rows=294.00 loops=1)
+                    Filter: is_verified
+                    Rows Removed by Filter: 29706
+                    Buffers: shared hit=486
+Planning:
+  Buffers: shared hit=364
+Planning Time: 0.678 ms
+Execution Time: 73.272 ms

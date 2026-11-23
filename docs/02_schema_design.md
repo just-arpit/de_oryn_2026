@@ -32,9 +32,9 @@ The schema was reconstructed from all nine CSVs in `seed_data.zip`, using the ex
 | posts | post_type | VARCHAR(10) | NN, CK | PHOTO, VIDEO, CAROUSEL, REEL. |
 | posts | caption | TEXT | nullable | Optional caption; 8,950 rows empty. |
 | posts | location_name | VARCHAR(100) | nullable | Optional free-form place; 41,818 rows empty. |
-| posts | like_count | INTEGER | NN, CK >= 0 | Stored counter retained for supplied queries; seed count matches likes. |
-| posts | comment_count | INTEGER | NN, CK >= 0 | Stored counter retained for supplied queries; seed count matches comments. |
-| posts | is_archived | BOOLEAN | NN | Archive state. |
+| posts | like_count | INTEGER | NN, default 0, CK >= 0 | Stored counter retained for supplied queries; seed count matches likes. |
+| posts | comment_count | INTEGER | NN, default 0, CK >= 0 | Stored counter retained for supplied queries; seed count matches comments. |
+| posts | is_archived | BOOLEAN | NN, default false | Archive state. |
 | posts | created_at | TIMESTAMPTZ | NN | Post creation instant. |
 | post_hashtags | post_id | INTEGER | PK part, FK posts ON DELETE CASCADE | Post side of M:N tag relationship. |
 | post_hashtags | hashtag_id | INTEGER | PK part, FK hashtags ON DELETE RESTRICT | Tag side; referenced tags cannot be deleted while used. |

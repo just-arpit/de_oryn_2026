@@ -1,0 +1,70 @@
+=== W02 run 1 ===
+Insert on likes  (cost=0.00..0.01 rows=0 width=0) (actual time=0.109..0.109 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: likes_pkey
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=24
+  ->  Result  (cost=0.00..0.01 rows=1 width=16) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=60
+Planning Time: 0.057 ms
+Trigger for constraint likes_user_id_fkey: time=0.317 calls=1
+Trigger for constraint likes_post_id_fkey: time=0.236 calls=1
+Execution Time: 0.677 ms
+=== W02 run 2 ===
+Insert on likes  (cost=0.00..0.01 rows=0 width=0) (actual time=0.090..0.090 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: likes_pkey
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=25
+  ->  Result  (cost=0.00..0.01 rows=1 width=16) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=60
+Planning Time: 0.051 ms
+Trigger for constraint likes_user_id_fkey: time=0.297 calls=1
+Trigger for constraint likes_post_id_fkey: time=0.181 calls=1
+Execution Time: 0.583 ms
+=== W02 run 3 ===
+Insert on likes  (cost=0.00..0.01 rows=0 width=0) (actual time=0.100..0.100 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: likes_pkey
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=25
+  ->  Result  (cost=0.00..0.01 rows=1 width=16) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=60
+Planning Time: 0.056 ms
+Trigger for constraint likes_user_id_fkey: time=0.316 calls=1
+Trigger for constraint likes_post_id_fkey: time=0.236 calls=1
+Execution Time: 0.668 ms
+=== W02 run 4 ===
+Insert on likes  (cost=0.00..0.01 rows=0 width=0) (actual time=0.099..0.099 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: likes_pkey
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=25
+  ->  Result  (cost=0.00..0.01 rows=1 width=16) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=60
+Planning Time: 0.054 ms
+Trigger for constraint likes_user_id_fkey: time=0.314 calls=1
+Trigger for constraint likes_post_id_fkey: time=0.194 calls=1
+Execution Time: 0.622 ms
+=== W02 run 5 ===
+Insert on likes  (cost=0.00..0.01 rows=0 width=0) (actual time=0.098..0.098 rows=0.00 loops=1)
+  Conflict Resolution: NOTHING
+  Conflict Arbiter Indexes: likes_pkey
+  Tuples Inserted: 1
+  Conflicting Tuples: 0
+  Buffers: shared hit=25
+  ->  Result  (cost=0.00..0.01 rows=1 width=16) (actual time=0.000..0.000 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=60
+Planning Time: 0.055 ms
+Trigger for constraint likes_user_id_fkey: time=0.291 calls=1
+Trigger for constraint likes_post_id_fkey: time=0.182 calls=1
+Execution Time: 0.585 ms

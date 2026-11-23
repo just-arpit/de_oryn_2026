@@ -1,0 +1,135 @@
+=== R20 run 1 ===
+Limit  (cost=3655.92..3655.95 rows=10 width=12) (actual time=10.739..10.740 rows=10.00 loops=1)
+  Buffers: shared hit=1345
+  ->  Sort  (cost=3655.92..3676.03 rows=8042 width=12) (actual time=10.738..10.739 rows=10.00 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=1345
+        ->  HashAggregate  (cost=3401.72..3482.14 rows=8042 width=12) (actual time=10.440..10.616 rows=3239.00 loops=1)
+              Group Key: c.post_id
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=1342
+              ->  Hash Join  (cost=179.74..3361.51 rows=8042 width=4) (actual time=0.365..9.567 rows=12975.00 loops=1)
+                    Hash Cond: (c.post_id = p.post_id)
+                    Buffers: shared hit=1342
+                    ->  Seq Scan on comments c  (cost=0.00..2788.00 rows=150000 width=4) (actual time=0.004..3.679 rows=150000.00 loops=1)
+                          Buffers: shared hit=1288
+                    ->  Hash  (cost=139.53..139.53 rows=3217 width=4) (actual time=0.355..0.355 rows=3296.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 148kB
+                          Buffers: shared hit=54
+                          ->  Index Scan using idx_posts_created_at on posts p  (cost=0.29..139.53 rows=3217 width=4) (actual time=0.006..0.230 rows=3296.00 loops=1)
+                                Index Cond: (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone)
+                                Index Searches: 1
+                                Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.583 ms
+Execution Time: 10.787 ms
+=== R20 run 2 ===
+Limit  (cost=3655.92..3655.95 rows=10 width=12) (actual time=9.691..9.692 rows=10.00 loops=1)
+  Buffers: shared hit=1345
+  ->  Sort  (cost=3655.92..3676.03 rows=8042 width=12) (actual time=9.690..9.691 rows=10.00 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=1345
+        ->  HashAggregate  (cost=3401.72..3482.14 rows=8042 width=12) (actual time=9.435..9.584 rows=3239.00 loops=1)
+              Group Key: c.post_id
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=1342
+              ->  Hash Join  (cost=179.74..3361.51 rows=8042 width=4) (actual time=0.336..8.697 rows=12975.00 loops=1)
+                    Hash Cond: (c.post_id = p.post_id)
+                    Buffers: shared hit=1342
+                    ->  Seq Scan on comments c  (cost=0.00..2788.00 rows=150000 width=4) (actual time=0.004..3.301 rows=150000.00 loops=1)
+                          Buffers: shared hit=1288
+                    ->  Hash  (cost=139.53..139.53 rows=3217 width=4) (actual time=0.326..0.327 rows=3296.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 148kB
+                          Buffers: shared hit=54
+                          ->  Index Scan using idx_posts_created_at on posts p  (cost=0.29..139.53 rows=3217 width=4) (actual time=0.006..0.214 rows=3296.00 loops=1)
+                                Index Cond: (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone)
+                                Index Searches: 1
+                                Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.558 ms
+Execution Time: 9.739 ms
+=== R20 run 3 ===
+Limit  (cost=3655.92..3655.95 rows=10 width=12) (actual time=9.436..9.437 rows=10.00 loops=1)
+  Buffers: shared hit=1345
+  ->  Sort  (cost=3655.92..3676.03 rows=8042 width=12) (actual time=9.435..9.436 rows=10.00 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=1345
+        ->  HashAggregate  (cost=3401.72..3482.14 rows=8042 width=12) (actual time=9.181..9.327 rows=3239.00 loops=1)
+              Group Key: c.post_id
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=1342
+              ->  Hash Join  (cost=179.74..3361.51 rows=8042 width=4) (actual time=0.314..8.478 rows=12975.00 loops=1)
+                    Hash Cond: (c.post_id = p.post_id)
+                    Buffers: shared hit=1342
+                    ->  Seq Scan on comments c  (cost=0.00..2788.00 rows=150000 width=4) (actual time=0.004..3.227 rows=150000.00 loops=1)
+                          Buffers: shared hit=1288
+                    ->  Hash  (cost=139.53..139.53 rows=3217 width=4) (actual time=0.306..0.306 rows=3296.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 148kB
+                          Buffers: shared hit=54
+                          ->  Index Scan using idx_posts_created_at on posts p  (cost=0.29..139.53 rows=3217 width=4) (actual time=0.005..0.197 rows=3296.00 loops=1)
+                                Index Cond: (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone)
+                                Index Searches: 1
+                                Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.497 ms
+Execution Time: 9.476 ms
+=== R20 run 4 ===
+Limit  (cost=3655.92..3655.95 rows=10 width=12) (actual time=9.686..9.687 rows=10.00 loops=1)
+  Buffers: shared hit=1345
+  ->  Sort  (cost=3655.92..3676.03 rows=8042 width=12) (actual time=9.685..9.686 rows=10.00 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=1345
+        ->  HashAggregate  (cost=3401.72..3482.14 rows=8042 width=12) (actual time=9.426..9.581 rows=3239.00 loops=1)
+              Group Key: c.post_id
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=1342
+              ->  Hash Join  (cost=179.74..3361.51 rows=8042 width=4) (actual time=0.313..8.708 rows=12975.00 loops=1)
+                    Hash Cond: (c.post_id = p.post_id)
+                    Buffers: shared hit=1342
+                    ->  Seq Scan on comments c  (cost=0.00..2788.00 rows=150000 width=4) (actual time=0.004..3.264 rows=150000.00 loops=1)
+                          Buffers: shared hit=1288
+                    ->  Hash  (cost=139.53..139.53 rows=3217 width=4) (actual time=0.304..0.304 rows=3296.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 148kB
+                          Buffers: shared hit=54
+                          ->  Index Scan using idx_posts_created_at on posts p  (cost=0.29..139.53 rows=3217 width=4) (actual time=0.006..0.199 rows=3296.00 loops=1)
+                                Index Cond: (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone)
+                                Index Searches: 1
+                                Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.515 ms
+Execution Time: 9.733 ms
+=== R20 run 5 ===
+Limit  (cost=3655.92..3655.95 rows=10 width=12) (actual time=9.389..9.390 rows=10.00 loops=1)
+  Buffers: shared hit=1345
+  ->  Sort  (cost=3655.92..3676.03 rows=8042 width=12) (actual time=9.388..9.389 rows=10.00 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=1345
+        ->  HashAggregate  (cost=3401.72..3482.14 rows=8042 width=12) (actual time=9.122..9.277 rows=3239.00 loops=1)
+              Group Key: c.post_id
+              Batches: 1  Memory Usage: 409kB
+              Buffers: shared hit=1342
+              ->  Hash Join  (cost=179.74..3361.51 rows=8042 width=4) (actual time=0.305..8.432 rows=12975.00 loops=1)
+                    Hash Cond: (c.post_id = p.post_id)
+                    Buffers: shared hit=1342
+                    ->  Seq Scan on comments c  (cost=0.00..2788.00 rows=150000 width=4) (actual time=0.003..3.219 rows=150000.00 loops=1)
+                          Buffers: shared hit=1288
+                    ->  Hash  (cost=139.53..139.53 rows=3217 width=4) (actual time=0.297..0.297 rows=3296.00 loops=1)
+                          Buckets: 4096  Batches: 1  Memory Usage: 148kB
+                          Buffers: shared hit=54
+                          ->  Index Scan using idx_posts_created_at on posts p  (cost=0.29..139.53 rows=3217 width=4) (actual time=0.005..0.194 rows=3296.00 loops=1)
+                                Index Cond: (created_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone)
+                                Index Searches: 1
+                                Buffers: shared hit=54
+Planning:
+  Buffers: shared hit=273
+Planning Time: 0.487 ms
+Execution Time: 9.428 ms
